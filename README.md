@@ -1,5 +1,9 @@
 # Kurze Hose Checker - Alexa Skill 🩳
 
+![Build Status](https://github.com/jakobheine/kurze-hose-checker/actions/workflows/cicd.yml/badge.svg)
+![Coverage Status](https://codecov.io/gh/jakobheine/kurze-hose-checker/branch/main/graph/badge.svg?token=b481c683-4dd9-48c5-95c3-13289da7be67)
+![LIVE](https://img.shields.io/badge/status-live-brightgreen)
+
 This project implements an Alexa skill called **Kurze Hose Checker** ("Shorts Checker") that provides users with weather-based advice on whether they can wear shorts today at their postal code location in Germany. It integrates with Alexa device address APIs to get the user's postal code and uses the OpenRouter API for weather data, generating natural language responses.
 
 ---
