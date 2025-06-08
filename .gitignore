@@ -1,0 +1,11 @@
+# Deployment
+package/
+lambda_deployment_package.zip
+
+# Local dev
+venv
+.env
+.ruff_cache
+.pytest_cache
+__pycache__
+.coverage
