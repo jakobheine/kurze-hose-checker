@@ -41,11 +41,7 @@ This project implements an Alexa skill called **Kurze Hose Checker** ("Shorts Ch
 Clone the repo and create a virtual environment:
 
 ```bash
-git clone <repo_url>
-cd kurze-hose-checker
-python -m venv venv
-source venv/bin/activate
-pip install -r requirements-dev.txt
+make install-dev
 ```
 
 ## Running Tests and Coverage
@@ -53,22 +49,22 @@ pip install -r requirements-dev.txt
 Run tests with coverage reporting for source files in `src/`:
 
 ```bash
-pytest --cov=src test/
+make test
 ```
 
 This will output coverage info and show missing lines.
 For line-by-line coverage details:
 
 ```zsh
-pytest --cov=src --cov-report=term-missing test/
+make coverage
 ```
 
 ## Linting and Formatting
 
 Use ruff to check and format code according to project style:
 ```zsh
-ruff check src test
-ruff format .
+make lint
+make format
 ```
 
 ## Type Checking
@@ -76,12 +72,12 @@ ruff format .
 Static type checks are done with Pyrefly:
 
 ```zsh
-pyrefly check src test
+make typecheck
 ```
 
 ## All in One
 ```zsh
-ruff check src test --fix && pyrefly check src test && pytest --cov=src --cov-report=term-missing test/
+make all
 ```
 
 ## Deployment to AWS Lambda
@@ -89,14 +85,8 @@ ruff check src test --fix && pyrefly check src test && pytest --cov=src --cov-re
 Build and package the Lambda deployment ZIP from the project root:
 
 ```zsh
-rm -rf package lambda_deployment_package.zip
-mkdir package
-pip install -r requirements.txt -t package/
-cp -r src/khc package/
-cp src/khc/app.py package/
-cd package
-zip -r ../lambda_deployment_package.zip .
-cd ..
+make package
+make deploy
 ```
 
 ## Environment Variables
