@@ -16,6 +16,9 @@ coverage: install-dev
 lint: install-dev
 	venv/bin/ruff check src test
 
+fix: install-dev
+	venv/bin/ruff check src test --fix
+
 format: install-dev
 	venv/bin/ruff format .
 
