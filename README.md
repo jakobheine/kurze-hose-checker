@@ -38,7 +38,7 @@ This project implements an Alexa skill called **Kurze Hose Checker** ("Shorts Ch
 
 ## Development Setup
 
-Clone the repo and create a virtual environment:
+Clone the repo and set up the development environment:
 
 ```bash
 make install-dev

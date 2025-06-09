@@ -5,6 +5,7 @@ venv:
 
 install-dev: venv
 	venv/bin/pip install -r requirements-dev.txt
+	venv/bin/pre-commit install
 
 test: install-dev
 	venv/bin/pytest test/
