@@ -1,7 +1,5 @@
-# Runtime dependencies
-ask-sdk-core==1.19.0
-ask-sdk-model==1.82.0
-requests==2.32.3
+# Include all runtime dependencies
+-r requirements.txt
 
 # Test dependencies
 pyrefly==0.18.1
