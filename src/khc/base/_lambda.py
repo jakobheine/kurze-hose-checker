@@ -1,7 +1,7 @@
 import abc
 import typing
 import aws_lambda_typing.context as context_
-import aws_lambda_typing.events
+import khc.base.event
 
 
 class LambdaFunction(abc.ABC):
@@ -10,14 +10,14 @@ class LambdaFunction(abc.ABC):
     @abc.abstractmethod
     def handler(
         self,
-        event: aws_lambda_typing.events.APIGatewayProxyEventV2,
+        event: khc.base.event.BaseEvent,
         context: context_.Context,
     ) -> dict[str, typing.Any]:
         """
         Handle an AWS Lambda invocation.
 
         Args:
-            event: Generic Lambda event
+            event: Either an API Gateway event or an Alexa event
             context: Lambda context
 
         Returns:
